@@ -1,0 +1,153 @@
+{% extends 'greenhouse/header.html' %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Overview</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-thermometer-empty fa-5x" ></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Temperature</div>
+                            <div class="huge">{{latest_data_point.temperature}} &deg;C</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/detailed/temperature/">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tint fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Humidity</div>
+                            <div class="huge">{{latest_data_point.air_humidity|floatformat:-1}}%</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/detailed/humidity/">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-lightbulb-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Light</div>
+                            <div class="huge">
+                                {% if latest_data_point.light_on == 1%}
+                                    On
+                                {% else %}
+                                    Off
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/detailed/light/">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-leaf fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Soil moisture</div>
+                            <div class="huge">
+                                {{latest_data_point.soil_moisture_1|floatformat:-1}}% /
+                                {{latest_data_point.soil_moisture_2|floatformat:-1}}%
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/detailed/moisture/">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-video-camera fa-fw"></i> Camera feed
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+
+                    {% load static %}
+                    <img src="{{latest_data_point.image.url}}" alt="camera feed" class="img-responsive" />
+                    <!--<h4>url: {{latest_data_point.image.url}}</h4>-->
+                    <!--<h4>path: {{latest_data_point.image.path}}</h4>-->
+                    <!--<h4>name: {{latest_data_point.image.name}}</h4>-->
+
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-6 -->
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-hdd-o fa-fw"></i> Hard drive
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    {{system_free_space}} free disk space
+                    <!--<div id="morris-area-chart"></div>-->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-6 -->
+    </div>
+    <!-- /.row -->
+
+{% endblock %}

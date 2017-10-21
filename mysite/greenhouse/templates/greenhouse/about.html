@@ -1,0 +1,51 @@
+{% extends 'greenhouse/header.html' %}
+
+{% block content %}
+
+    <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">About</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3><i>"An experiment in django web development and automatic control of plants using python and raspberry pi"</i></h3>
+
+                    <br>
+                    {% include 'greenhouse/includes/carousel.html'%}
+
+                    <br>
+
+
+                    <p>
+                        I have have always been fascinated by home automation and this project is an investigation of what could be possible using a raspberry pi, some basic electronics and the magic of python.
+
+                    </p>
+                </div>
+
+                <div class="col-lg-6">
+
+                    <h4>Technology and hardware</h4>
+                    <ul>
+                        <li>Django web framework</li>
+                        <li>Built in SQLite database</li>
+                        <li>Raspberry pi zero with built in WiFi</li>
+                        <li>Raspberry Pi camera v3</li>
+                    </ul>
+
+                    <p>
+                        When the raspberry pi boots it will automatically start to processes.
+                        One starts the server and the other is a python scripts that read sensor values, captures images and control the lights and water pump.
+                        Both processes communicate with a local database file to write sensor values, read settings etc.
+                    </p>
+
+                The project has been created by Martin Løland. All the code can be found at <a href="https://github.com/martinloland/">https://github.com/martinloland/</a>
+                </div>
+
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<h3>Latest values:</h3>
+{{latest_data_point}}<br><br>
+
+Temperature: {{latest_data_point.temperature}}<br>
+Moisture: {{latest_data_point.soil_moisture_1}} / {{latest_data_point.soil_moisture_2}}<br>
+Humidity: {{latest_data_point.air_humidity}}<br>
+Light:
+{% if latest_data_point.light_on == 1%}
+    On
+{% else %}
+    Off
+{% endif %}

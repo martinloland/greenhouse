@@ -1,0 +1,76 @@
+<!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Smart Greenhouse</a>
+            </div>
+            <!-- /.navbar-header -->
+    <div class="hidden-xs">
+                {% if system_status == True %}
+                    <div class="alert alert-success" style="float:right; padding:5px; margin:8px">
+                      System status: <strong>{{system_message}}</strong>
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger" style="float:right; padding:5px; margin:8px">
+                      System status: <strong>{{system_message}}</strong>
+                    </div>
+                {% endif %}
+    </div>
+
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Sensor data<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/detailed/temperature/">Temperature</a>
+                                </li>
+                                <li>
+                                    <a href="/detailed/humidity/">Humidity</a>
+                                </li>
+                                <li>
+                                    <a href="/detailed/moisture/">Moisture</a>
+                                </li>
+                                <li>
+                                    <a href="/video/">Video</a>
+                                </li>
+                                <li>
+                                    <a href="/detailed/light/">Light</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="/about/"><i class="fa fa-tasks fa-fw"></i> About</a>
+                        </li>
+                        <li>
+                            <a href="/contact/"><i class="fa fa-envelope-o fa-fw"></i> Contact</a>
+                        </li>
+                        <li>
+                            <a href="/admin"><i class="fa fa-lock fa-fw"></i> Admin</a>
+                        </li>
+                        <div class="visible-xs">
+                            {% if system_status == True %}
+                                <div class="alert alert-success" style="float:left; padding:5px; margin:8px">
+                                  System status: <strong>{{system_message}}</strong>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-danger" style="float:left; padding:5px; margin:8px">
+                                  System status: <strong>{{system_message}}</strong>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>

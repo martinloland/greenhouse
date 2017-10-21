@@ -1,0 +1,21 @@
+{% extends 'greenhouse/header.html' %}
+
+{% block content %}
+
+    <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Video feed</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    {% load static %}
+                    <img src="{{latest_data_point.image.url}}" alt="camera feed" class="img-responsive" />
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+
+{% endblock %}
