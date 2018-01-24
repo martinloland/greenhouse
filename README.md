@@ -3,7 +3,7 @@ A django driven automatic smart greenhouse
 
 ## Installation
 
-### Upgrade dabian
+### Upgrade debian
 ```
 sudo apt-get update
 sudo apt-get upgrade
@@ -14,4 +14,9 @@ sudo apt-get upgrade
 
 ```
 pip install virtualenv virtualenvwrapper
+# mkdir ~/.virtualenvs maybye?
+export WORKON_HOME=~/.virtualenvs
+nano ~/.bashrc # add and save:
+source ~/.local/bin/virtualenvwrapper.sh
 ```
+To verify, the comman 'workon' should now work.
