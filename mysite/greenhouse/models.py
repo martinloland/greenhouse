@@ -97,7 +97,7 @@ class SystemStatus(models.Model):
             if gb_free > 10:
                 return '{} GB'.format(int(gb_free))
             else:
-                return '{.1f} GB'.format(gb_free)
+                return '{:.1f} GB'.format(gb_free)
         else:
             return '{} MB'.format(mb_free)
 
