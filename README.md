@@ -56,10 +56,13 @@ static domain_name_servers=192.168.0.1
 interface wlan0
 
 static ip_address=192.168.0.189/24
-static routers=192.168.0.1
+static routers=192.168.0.1 #Default gateway
 static domain_name_servers=192.168.0.1
 ```
 Run `ifconfig` and it should show that ip address under inet
+Port forward on the router:
+![alt tag](https://raw.githubusercontent.com/martinloland/greenhouse/master/port_forward.PNG)
+The global IP address can be found on the router
 
 ### uwsgi and nginx
 ```
