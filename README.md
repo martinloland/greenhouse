@@ -20,10 +20,10 @@ To verify, `python --version` prints the version in use.
 ### Virtual enviorment
 ```
 sudo pip install virtualenv virtualenvwrapper
-# mkdir ~/.virtualenvs maybye not needed?
 export WORKON_HOME=~/.virtualenvs
 nano ~/.bashrc # add and save:
 source ~/.local/bin/virtualenvwrapper.sh
+source ~/.bashrc # restart startup file
 ```
 To verify, the command `workon` should now work.
 
