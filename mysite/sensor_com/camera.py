@@ -31,12 +31,13 @@ class Camera(object):
         return self._default_image()
 
     def _decide_to_capture(self, capture_at_night, light_on):
-        if light_on:
-            return True
-        elif capture_at_night:
-            return True
-        else:
-            return False
+        # if light_on:
+        #     return True
+        # elif capture_at_night:
+        #     return True
+        # else:
+        #     return False
+        return True
 
     def _default_image(self):
         filename = 'flower'
