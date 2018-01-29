@@ -7,7 +7,7 @@ if platform.system() is not 'Windows':
 
 class Camera(object):
     def __init__(self, debug, resolution):
-        self.debug = debug
+        self.debug = False
         self.folder_url = '../media/camera/'
         self.folder_save = '../static/media/camera/'
         self.suffix = '.jpg'
@@ -24,8 +24,9 @@ class Camera(object):
                 path_save = os.path.join(base, self.folder_save+filename+self.suffix)
                 self.picam.start_preview()
                 sleep(2)
-                self.picam.capture(path_save)
-                return path_url
+                # self.picam.capture(path_save)
+                self.picam.capture('/home/pi/greenhouse/mysite/media/camera/flower.jpg')
+                # return path_url
 
         return self._default_image()
 
