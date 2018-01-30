@@ -103,6 +103,7 @@ sudo ln -s /home/pi/greenhouse/mysite/mysite_uwsgi.ini /etc/uwsgi/vassals/
 sudo usermod -a -G www-data pi
 sudo chgrp www-data /home/pi/greenhouse/mysite
 sudo chmod g+rwxs /home/pi/greenhouse/mysite
+sudo chown www-data:www-data /home/pi/greenhouse/mysite/db.sqlite3
 ```
 
 
