@@ -21,9 +21,11 @@ class Camera(object):
             base = os.path.dirname(__file__)
             path_url = os.path.join(self.folder_url, filename+self.suffix)
             path_save = os.path.join(base, self.folder_save+filename+self.suffix)
+            path_save_latest = os.path.join(base, self.folder_save+'latest'+self.suffix)
             self.picam.start_preview()
             sleep(2)
             self.picam.capture(path_save)
+            self.picam.capture(path_save_latest)
             return path_url
         else:
             return self._default_image()
@@ -38,9 +40,6 @@ class Camera(object):
             return False
 
     def _default_image(self):
-        filename = 'flower'
-        base = os.path.dirname(__file__)
+        filename = 'latest'
         path_url = os.path.join(self.folder_url, filename + self.suffix)
-        path_save = os.path.join(base,
-                                 self.folder_save + filename + self.suffix)
         return path_url
